@@ -11,6 +11,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Build Android
         run: ./gradlew :androidApp:assembleDebug
 
@@ -22,6 +24,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Build iOS
         run: ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64
 
@@ -33,6 +37,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Build Desktop
         run: ./gradlew :desktopApp:packageDeb
 
@@ -44,5 +50,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Build Web
         run: ./gradlew :webApp:jsBrowserProductionWebpack
